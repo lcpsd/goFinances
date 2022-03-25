@@ -10,6 +10,13 @@ export default {
         shape: '#FFF',
         title: '#363F5F',
         text: '#9696B2',
+        text_dark: '#000',
         background: '#F0F2F5',
+    },
+
+    fonts:{
+        regular: 'Poppins_400Regular',
+        medium: 'Poppins_500Medium',
+        bold: 'Poppins_700Bold',
     }
 }
