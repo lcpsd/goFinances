@@ -8,18 +8,31 @@ import {
     Footer
 } from "./styles"
 
-export default function HightlightCard(){
+const icon = {
+    up: 'arrow-up-circle',
+    down: 'arrow-down-circle',
+    total: 'dollar-sign'
+}
+
+interface Props{
+    title: string,
+    amount: number,
+    lastTransaction: string
+    type: 'up' | 'down' | 'total'
+}
+
+export default function HightlightCard({title, amount, lastTransaction, type}:Props){
 
     return(
-        <Container>
+        <Container type={type}>
             <Header>
-                <Title>Entrada</Title>
-                <Icon name="arrow-up-circle"/>
+                <Title type={type}>{title}</Title>
+                <Icon name={icon[type]} type={type}/>
             </Header>
 
             <Footer>
-                <Amount>R$10.000,00</Amount>
-                <LastTransaction>A última entrada é de XYZ de ABCD</LastTransaction>
+                <Amount type={type}>R${amount}</Amount>
+                <LastTransaction type={type}>{lastTransaction}</LastTransaction>
             </Footer>
         </Container>
     )
